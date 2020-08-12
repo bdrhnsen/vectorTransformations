@@ -1,0 +1,40 @@
+% vector transformations
+%rand coordinate
+psi=pi/4;
+theta=pi/6;
+fi=pi/8;
+
+
+
+%input vector
+vx0=3;
+vy0=-6;
+vz0=14;
+
+%transform matrices around z axis yaw
+Lpsi=[
+    cos(psi) sin(psi) 0
+    -sin(psi) cos(psi) 0
+    0   0   1];
+
+%around y axis pitch
+Ltheta=[
+    cos(theta) 0 -sin(theta)
+    0   1   0
+    sin(theta) 0 cos(theta)];
+
+
+%around x axis roll
+Lfi=[
+    1 0 0
+    0 cos(fi) sin(fi)
+    0 -sin(fi) cos(fi)];
+
+
+L=Lfi.*Ltheta.*Lpsi;
+vector_input=[
+    vx0
+    vy0
+    vz0];
+
+vector_output=L.*vector_input;
