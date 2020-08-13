@@ -11,9 +11,13 @@ r=2*c+7;
 pqr_matrix=[p
             q
             r];
-theta=pi/5;
-fi=pi/6;
+
+theta=pi/18;
+fi=pi/18;
 dot_matrix=in_transform(theta,fi,pqr_matrix);
+
+%euler angles (integrating dot matrix)
+angles=int(dot_matrix);
 
 
 
