@@ -1,18 +1,19 @@
-%pqr is what we get from IMU
+%pqr is what we get from IMU lets say there is an assigned projection
 %use in_tranform for pqr -> dot matrix
+%use transform for dot -> pqr
 
 syms a b c real;
 
-fi_dot=a^2+2;
-theta_dot=b^4+5;
-psi_dot=2*c+7;
+p=a^2+2;
+q=b^4+5;
+r=2*c+7;
 
-angle_dot=[fi_dot
-            theta_dot
-            psi_dot];
+pqr_matrix=[p
+            q
+            r];
 theta=pi/5;
 fi=pi/6;
-pqr_matrix=transform(theta,fi,angle_dot);
+dot_matrix=in_transform(theta,fi,pqr_matrix);
 
 
 
