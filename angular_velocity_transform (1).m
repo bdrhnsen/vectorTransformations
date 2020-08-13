@@ -1,3 +1,6 @@
+%pqr is what we get from IMU
+%use in_tranform for pqr -> dot matrix
+
 syms a b c real;
 
 fi_dot=a^2+2;
